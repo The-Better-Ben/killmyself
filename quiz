@@ -1,0 +1,70 @@
+#1
+age= int(input("What is your age in years?"))
+decades=age/10
+print("your age in decades is")
+print(decades)
+common=.75*age
+leap=.25*age
+weeksc=common*52.143
+weeksl= leap*52.286
+weeks= weeksc+weeksl
+print("your age in weeks is")
+print(weeks)
+commond=.75*age
+leapd=.25*age
+leapdays=leapd*366
+commondays=commond*365
+aged=commondays+leapdays
+print("your age in days is")
+print(aged)
+minutes=aged*1440
+print("your age in minutes is")
+print(minutes)
+#3
+firstd=int(input("first dimension (in feet)?"))
+secondd=int(input("second dimension (in feet)?"))
+costr=int(input("cost per square foot"))
+a=firstd*secondd
+print("area equals")
+print(a)
+p= 2*(firstd+secondd)
+print("perimeter equals")
+print(p)
+c=a*costr
+print("total cost equals")
+print(c)
+#5
+#Challenge 5
+first= int(input("first cut length(must be <10)"))
+second=int(input("second cut length(must be less than 10)"))
+#now have the possible inputs
+z=first+second
+s=5
+third=10-second
+a=(s*(s-first)*(s-second)*(s-third))**.5
+print("area equals")
+print(a)
+print("1st length equals")
+print(first)
+print("second length equals ")
+x=second-first
+print(x)
+print("third length equals")
+print(third)
+#6
+ini=int(input("initial number of zombies?"))
+r= int(input("people per day?"))
+n= int(input("days since incident?"))
+rate=r+1
+total=ini*rate**n
+print("the number of zombies is")
+print(total)
+#7
+x=int(input("Enter a number into da mystery box"))
+a=32**(x/5)
+print("first equation outputs ", a )
+b=2*x
+print("second equation outputs ", b )
+c= 100-x
+print("third equation outputs ", c )
+
