@@ -1,0 +1,39 @@
+#   a116_buggy_image.py
+import turtle as trtl
+# instead of a descriptive name of the turtle such as painter,
+# a less useful variable name x is used
+painter = trtl.Turtle()
+painter.pensize(40)
+painter.penup()
+painter.goto(0,-20)
+painter.pendown()
+painter.circle(20)
+legs = 4
+change = 70
+z = 90 / legs
+painter.pensize(5)
+n = 0
+for legs in range(9):
+  while (n < legs):
+    painter.goto(0,0)
+    painter.setheading(z*n-10)
+    if n>= 4:
+      painter.setheading(z*n +115)
+    painter.forward(change)
+    n = n + 1
+painter.penup()
+painter.goto(0, 10)
+painter.pendown
+painter.begin_fill()
+painter.color("white")
+painter.circle(3)
+painter.end_fill()
+painter.penup()
+painter.goto(-15, 0)
+painter.pendown
+painter.begin_fill()
+painter.circle(3)
+painter.end_fill()
+painter.hideturtle()
+wn = trtl.Screen()
+wn.mainloop()
