@@ -1,0 +1,82 @@
+# a121_catch_a_turtle.py
+#-----import statements-----
+
+import turtle as trtl
+import time as timing
+t=trtl.Turtle()
+timer=trtl.Turtle()
+import random as Rand
+s=trtl.Turtle()
+t.speed(0)
+timer.speed(0)
+time=0
+score=0
+z=1
+
+#-----game configuration----
+
+
+
+
+#-----initialize turtle-----
+t.turtlesize(30)
+s.hideturtle()
+s.penup()
+s.goto(200, 225)
+s.pendown()
+t.color("red")
+t.shape("circle")
+
+def clicked(x,y):
+    xcor=Rand.randint(-200, 200)
+    ycor=Rand.randint(-200, 200)
+    t.penup()
+    t.goto(xcor,ycor)
+    t.pendown()
+    x=(xcor)
+    y=ycor
+
+    global score
+    score=score+1
+    s.write(score, font=("arial" , 30))
+    s.clear()
+
+
+t.onclick(clicked)
+
+timer.hideturtle()
+timer.penup()
+timer.goto(-200, 225)
+timer.pendown
+start=int(timing.time())
+while True:
+    while int(timing.time())-start<30:
+        timer.write(int(timing.time()-start), font=("arial", 30))
+        timer.clear()
+    if int(timing.time())-start==30:
+        finalscore=score
+    t.hideturtle()
+    s.penup()
+    s.goto(0,0)
+    s.pendown()
+    s.write(finalscore, font=("arial" , 30))
+
+
+
+
+
+
+
+
+
+#-----game functions--------
+
+
+
+
+
+#-----events----------------
+
+
+wn = trtl.Screen()
+wn.mainloop()
