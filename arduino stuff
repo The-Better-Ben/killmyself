@@ -1,0 +1,123 @@
+#include <Adafruit_CircuitPlayground.h>
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  CircuitPlayground.begin();
+  
+}
+int(n)=0;
+void loop() {
+  // put your main code here, to run repeatedly:
+    
+    
+    if (n<=10){
+      n=(n+1);
+      CircuitPlayground.setPixelColor(10-n, 100, 100, 100);
+      delay(100);
+      CircuitPlayground.clearPixels();
+    
+    }else{
+      n=(n+1);
+      CircuitPlayground.setPixelColor(-1+n, 100, 100, 100);
+      delay(100);
+      CircuitPlayground.clearPixels();
+    
+    }
+
+    
+    delay(100);
+  }
+  
+
+
+
+
+//project 2
+
+
+#include <Adafruit_CircuitPlayground.h>
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  CircuitPlayground.begin();
+}
+int(n)=0;
+void loop() {
+  // put your main code here, to run repeatedly:
+  //only works if over 10 secs
+  int(time)=0;
+  
+  if (CircuitPlayground.leftButton()){
+    time=time+10000;
+    CircuitPlayground.setPixelColor(0+n, 100, 100, 100);
+    n=n+1;
+    CircuitPlayground.playTone(100, 200);
+    if (CircuitPlayground.rightButton()){
+      CircuitPlayground.playTone(200, 300);
+      delay(time/10);
+      CircuitPlayground.setPixelColor(9, 0, 00, 00);
+      delay(time/10);
+      CircuitPlayground.setPixelColor(8, 0, 00, 00);
+      delay(time/10);
+      CircuitPlayground.setPixelColor(7, 0, 00, 00);
+      delay(time/10);
+      CircuitPlayground.setPixelColor(6, 0, 00, 00);
+      delay(time/10);
+      CircuitPlayground.setPixelColor(5, 0, 00, 00);
+      delay(time/10);
+      CircuitPlayground.setPixelColor(4, 0, 00, 00);
+      delay(time/10);
+      CircuitPlayground.setPixelColor(3, 0, 00, 00);
+      delay(time/10);
+      CircuitPlayground.setPixelColor(2, 0, 00, 00);
+      delay(time/10);
+      CircuitPlayground.setPixelColor(1, 0, 00, 00);
+      delay(time/10);
+      CircuitPlayground.clearPixels();
+      CircuitPlayground.playTone(200, 100);
+
+    }
+  }
+  }
+
+
+//project 3
+
+
+#include <Adafruit_CircuitPlayground.h>
+void setup() {
+  Serial.begin(9600);
+  CircuitPlayground.begin();
+  // put your setup code here, to run once:
+  pinMode(6, OUTPUT);
+}
+int(time)=500;
+
+void loop() {
+  
+  // put your main code here, to run repeatedly:
+  if(CircuitPlayground.leftButton()){
+    int(time)=time+200;
+    CircuitPlayground.playTone(200, 300);
+    for(int(i);time<5000; i++){
+      digitalWrite(6, HIGH);  // turn the LED on (HIGH is the voltage level)
+      delay(1000+time);                      // wait for a second
+      digitalWrite(6, LOW);   // turn the LED off by making the voltage LOW
+      delay(1000+time);  
+    }
+
+  }
+  if (CircuitPlayground.rightButton()){
+    int(time)=time+200;
+    for(int(i);time<5000; i++){
+      CircuitPlayground.playTone(200, 100);
+      digitalWrite(6, HIGH);  // turn the LED on (HIGH is the voltage level)
+      delay(1000-time);                      // wait for a second
+      digitalWrite(6, LOW);   // turn the LED off by making the voltage LOW
+      delay(1000-time);  
+    }
+  }
+}
+
+
+
