@@ -1,0 +1,51 @@
+n=2
+m=n
+
+sequencelengths=[]
+finallydone=False
+
+
+
+def nisequal():
+    global m, finallydone, counter
+    m=m/2
+    if m==1:
+        finallydone=True
+    else:
+        finallydone=False
+    counter=counter+1
+    mainsequence()
+        
+    
+def nisodd():
+    global m, finallydone, counter
+    m= 3*m +1
+    if m==1:
+        finallydone=True
+    else:
+        finallydone=False
+    counter=counter+1
+    mainsequence()
+
+
+
+def mainsequence():
+    global counter, m, n
+    z=m%2
+
+    if finallydone==True:
+        sequencelengths.append(counter)
+        print("Done with #", n)
+    elif z==0:
+        nisequal()
+    else:
+        nisodd()
+
+for i in range(10):
+    counter=0
+    mainsequence()
+    m=n
+    n=n+1
+    print(sequencelengths)
+
+    
