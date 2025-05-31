@@ -36,6 +36,7 @@ def mainsequence():
     if finallydone==True:
         sequencelengths.append(counter)
         print("Done with #", n)
+
     elif z==0:
         nisequal()
     else:
