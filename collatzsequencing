@@ -32,10 +32,10 @@ def nisodd():
 def mainsequence():
     global counter, m, n
     z=m%2
-
     if finallydone==True:
         sequencelengths.append(counter)
         print("Done with #", n)
+        finallydone=false
 
     elif z==0:
         nisequal()
