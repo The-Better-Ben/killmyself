@@ -1,0 +1,11 @@
+power=int(input("To what power'd you like to raise 2 to?"))
+listofdigits=[]
+import math as mth
+basenum=2**power
+while basenum>=0:
+  digit=basenum%10
+  listofdigits.append(digit)
+  basenum= mth.floor(basenum/10)
+  
+total=sum(listofdigits)
+print(total)
