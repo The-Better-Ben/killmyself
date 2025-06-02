@@ -30,23 +30,26 @@ def nisodd():
 
 
 def mainsequence():
-    global counter, m, n
+    global counter, m, n, finallydone
     z=m%2
 
     if finallydone==True:
         sequencelengths.append(counter)
-        print("Done with #", n)
+   
         finallydone=False
     elif z==0:
         nisequal()
     else:
         nisodd()
 
-for i in range(10):
+for i in range(999999):
     counter=0
     mainsequence()
     m=n
     n=n+1
-    print(sequencelengths)
+
+longest=max(sequencelengths)
+print(longest)
+    
 
     
