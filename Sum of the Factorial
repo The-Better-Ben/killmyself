@@ -1,0 +1,16 @@
+import math 
+base=int(input("what number would you like to take the sum of the digits of the factorial"))
+firstlist=[]
+finallist=[]
+
+for i in range(base-1):
+  firstlist.append(base)
+  base=base-1
+  
+factorial=math.prod(firstlist)
+while factorial>=0:
+  digit=factorial%10
+  finallist.append(digit)
+  factorial=math.floor(factorial/10)
+  
+sum(finallist)
