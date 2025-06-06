@@ -1,0 +1,142 @@
+##multiples of 3 or 5?
+n=1
+howmany=int(input("sum of all #'s below_"))
+listoffactors=[]
+for i in range(howmany-1):
+    if n%3==0 or n%5==0:
+        listoffactors.append(n)
+        print(n)
+    n=n+1
+sumofproducts=sum(listoffactors)
+print(sumofproducts)
+
+##Sum square difference
+NumNaturals=int(input("What number would you like to take the Sum Square Difference of?"))
+
+def sumofsquares(x):
+    ranges=[]
+    global totalofsums
+    for i in range(x):
+        y=x**2
+        ranges.append(y)
+        x=x-1
+    totalofsums=sum(ranges)
+
+def squareofsum(x):
+    ranged=[]
+    global totalofsquares
+    for i in range(x):
+        ranged.append(x)
+        x=x-1
+    almostthere=sum(ranged)
+    totalofsquares=almostthere**2
+
+sumofsquares(NumNaturals)
+squareofsum(NumNaturals)
+final=totalofsquares-totalofsums
+print(final)
+
+##Sum of digits
+power=int(input("To what power'd you like to raise 2 to?"))
+listofdigits=[1]
+import math as mth
+basenum=2**power
+for i in range(1000):
+  digit=basenum%10
+  listofdigits.append(digit)
+  basenum= mth.floor(basenum/10)
+  
+total=sum(listofdigits)
+print(total-1)
+
+##Sum of digits of factorial
+
+import math as mth
+base=int(input("what number would you like to take the sum of the digits of the factorial"))
+firstlist=[]
+finallist=[]
+
+for i in range(base-1):
+  firstlist.append(base)
+  base=base-1
+  
+factorial=mth.prod(firstlist)
+factorialstr=str(factorial)
+for i in range(len(factorialstr)+1):
+  digit=factorial%10
+  finallist.append(digit)
+  factorial=mth.floor(factorial/10)
+  
+sum=sum(finallist)
+print(sum)
+
+#Smallest Multiple
+n=20
+isdivis=False
+while isdivis==False:
+    if n%3==0 and n%6==0 and n%7==0 and n%8==0 and n%9==0 and n%11==0 and n%12==0 and n%13==0 and n%14==0 and n%15==0 and n%16==0 and n%17==0 and n%18==0 and n%19==0:
+        isdivis=True
+        print(n)
+    else:
+        isdivis=False
+        n=n+20
+
+##Collatz Sequence
+import sys
+n=2
+m=n
+sys.setrecursionlimit(2000)
+
+sequencelengths=[]
+finallydone=False
+
+
+
+def nisequal():
+    global m, finallydone, counter
+    m=m/2
+    if m==1:
+        finallydone=True
+    else:
+        finallydone=False
+    counter=counter+1
+    mainsequence()
+    
+        
+    
+def nisodd():
+    global m, finallydone, counter
+    m= 3*m +1
+    if m==1:
+        finallydone=True
+    else:
+        finallydone=False
+    counter=counter+1
+    mainsequence()
+
+
+
+def mainsequence():
+    global counter, m, n, finallydone
+    z=m%2
+
+    if finallydone==True:
+        sequencelengths.append(counter)
+   
+        finallydone=False
+    elif z==0:
+        nisequal()
+    else:
+        nisodd()
+
+for i in range(999999):
+    counter=0
+    mainsequence()
+    m=n
+    n=n+1
+
+longest=max(sequencelengths)
+print(longest+1)
+    
+
+    
